@@ -63,7 +63,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            VERSION:{{ GITHUB_REF }}
-            REBAR_BUILD_TARGET=miner
+            "VERSION={{ GITHUB_REF }}"
+            "REBAR_BUILD_TARGET=miner"
           secrets: |
             "github_token=${{ secrets.GITHUB_TOKEN }}"
