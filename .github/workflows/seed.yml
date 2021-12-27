@@ -2,6 +2,10 @@ name: seed
 
 on: [push]
 
+env:
+- miner_tag: 2021.12.22.0
+- seed_tag: seed0.0.42
+
 jobs:
   #Using this action https://github.com/marketplace/actions/build-and-push-docker-images
   docker:
@@ -63,7 +67,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            "VERSION={{ GITHUB_REF }}"
+            "VERSION=${{env.seed_tag}}"
             "REBAR_BUILD_TARGET=seed"
           secrets: |
             "github_token=${{ secrets.GITHUB_TOKEN }}"
