@@ -2,8 +2,8 @@ name: miner
 
 on: [push]
 env:
-- miner_tag: 2021.12.22.0
-- seed_tag: seed0.0.42
+  miner_tag: 2021.12.22.0
+  seed_tag: seed0.0.42
 
 jobs:
   #Using this action https://github.com/marketplace/actions/build-and-push-docker-images
